@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Candidatura</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div th:replace="/fragments/botoes ::botoes"></div>
+
+    <h1>Formulário de Candidatura</h1>
+    <div th:if="${mensagem}" class="alert alert-success">
+        <p th:text="${mensagem}"></p>
+    </div>
+    <form action="/submit" method="post" enctype="multipart/form-data" id="candidaturaForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required>
+
+        <label for="cargo">Cargo Desejado:</label>
+        <input type="text" id="cargo" name="cargoDesejado" required>
+
+        <label for="escolaridade">Escolaridade:</label>
+        <select id="escolaridade" name="escolaridade" required>
+            <option value="">Selecione</option>
+            <option value="fundamental">Ensino Fundamental</option>
+            <option value="medio">Ensino Médio</option>
+            <option value="tecnico">Ensino Técnico</option>
+            <option value="superior">Ensino Superior</option>
+            <option value="pos">Pós-graduação</option>
+            <option value="mestrado">Mestrado</option>
+            <option value="doutorado">Doutorado</option>
+        </select>
+
+        <label for="observacoes">Observações:</label>
+        <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+
+        <label for="arquivo">Arquivo (para envio do currículo):</label>
+        <input type="file" id="arquivo" name="file" accept=".pdf,.doc,.docx" required>
+        <div id="fileSizeError" class="error" style="display:none;">O arquivo deve ter no máximo 1MB.</div>
+
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" name="endereco" required>
+
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+<script src="/js/main.js" defer></script>
+</body>
+</html>

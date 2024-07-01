@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <title>Lista de Usuários</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <div th:replace="/fragments/botoes ::botoes"></div>
+    <h1>Usuarios cadastrados</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Cargo desejado</th>
+            <th>Data de envio</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="usuario : ${usuarios.content}">
+            <td th:text="${usuario.nome}"></td>
+            <td th:text="${usuario.cargoDesejado}"></td>
+            <td th:text="${usuario.dataEnvioFormatada}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="botoes">
+        <div th:if="${usuarios.hasPrevious()}" class="anterior">
+            <a th:href="@{/listar(page=${usuarios.number - 1})}">Anterior</a>
+        </div>
+
+        <div th:if="${usuarios.hasNext()}" class="proximo">
+            <a th:href="@{/listar(page=${usuarios.number + 1})}">Próximo</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
