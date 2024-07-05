@@ -8,6 +8,7 @@
 - [Funcionalidades](#funcionalidades-)
 - [Ferramentas](#ferramentas-)
 - [Implementações adicionais](#implementações-adicionais-)
+- [Como Usar](#como-usar-)
 - [Contato](#contato-)
 
 ## Sobre 📄
@@ -40,7 +41,25 @@ para quem realizou o envio do formulario endereco;
 - Starter-mail
 - Gson
 ## Implementações adicionais ➕
-O endereço do usuário com os campos: cep, logradouro, bairro, uf são preenchidos automaticamente após o usuario informar seu CEP no formulario
+O endereço do usuário com os campos: cep, logradouro, bairro, uf são preenchidos automaticamente após o usuario informar seu CEP no formulario.
+O preenchimento desses campos são feitos consumindo a API: [via cep](https://viacep.com.br).
+## Como Usar 📘
+
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/arimateia-souza/selecao-curriculo.git
+2. **Configurar o banco de dados:** 
+Substitua as variaveis no arquivo .properties
+   1. DATABASE_HOST=````seuhost````;
+   2. DATABASE_NAME=````NomeDoSeuBD````;
+   3. DATABASE_USERNAME=````nomeDoSeuUsuarioBD````;
+   4. DATABASE_PASSWORD=````senhaDoBD````;
+
+3. **Configurar o banco de dados:**
+   Foi usado o [Mailtrap](https://mailtrap.io/) para fazer o envio de emails enquanto teste da aplicação.
+Substitua as variaveis no arquivo .properties pelas suas credenciais.
+    1. MAIL_USER=````user````;
+    2. MAIL_PASSWORD=````senha````;
 
 ## Contato ✉
 
