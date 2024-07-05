@@ -24,7 +24,7 @@ public class EmailService {
         MimeMessage message = mailSender.createMimeMessage();
         try{
             MimeMessageHelper helper = new MimeMessageHelper(message,true);
-            helper.setFrom("noreplay@dominio.com");
+            helper.setFrom("teste@teste.com");
             helper.setTo(usuario.getEmail());
             helper.setSubject("Analise de Curriculo: " + usuario.getCargoDesejado());
             helper.setText(mensagem(usuario));
